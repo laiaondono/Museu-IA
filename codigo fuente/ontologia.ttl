@@ -1,0 +1,1698 @@
+@prefix : <urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa> .
+
+<urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://webprotege.stanford.edu/clasificadaEn
+<http://webprotege.stanford.edu/clasificadaEn> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+                                               rdfs:range <http://webprotege.stanford.edu/Tematica> ;
+                                               rdfs:comment "Esta relación indica en que temática se clasifica una obra." ;
+                                               rdfs:label "clasificadaEn" .
+
+
+###  http://webprotege.stanford.edu/correspondeA
+<http://webprotege.stanford.edu/correspondeA> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf owl:topObjectProperty ;
+                                              rdfs:domain <http://webprotege.stanford.edu/Obra> ,
+                                                          <http://webprotege.stanford.edu/Pintor> ;
+                                              rdfs:range <http://webprotege.stanford.edu/Epoca> ;
+                                              rdfs:comment "Esta relación indica a que epoca corrresponde una obra y pintor." ;
+                                              rdfs:label "correspondeA" .
+
+
+###  http://webprotege.stanford.edu/perteneceA
+<http://webprotege.stanford.edu/perteneceA> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdfs:domain <http://webprotege.stanford.edu/Obra> ,
+                                                        <http://webprotege.stanford.edu/Pintor> ;
+                                            rdfs:range <http://webprotege.stanford.edu/Corriente> ;
+                                            rdfs:comment "Esta relación indica a que corriente pertenece una obra y pintor." ;
+                                            rdfs:label "perteneceA" .
+
+
+###  http://webprotege.stanford.edu/pintadaPor
+<http://webprotege.stanford.edu/pintadaPor> rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf owl:topObjectProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+                                            rdfs:range <http://webprotege.stanford.edu/Pintor> ;
+                                            rdfs:comment "Esta relación indica que pintor ha pintado una obra." ;
+                                            rdfs:label "pintadaPor" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#prefiereCorriente
+:prefiereCorriente rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf owl:topObjectProperty ;
+                   rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                   rdfs:range <http://webprotege.stanford.edu/Corriente> ;
+                   rdfs:comment "Esta relación indica que corrientes prefiere un visitante." ;
+                   rdfs:label "prefiereCorriente" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#prefiereEpoca
+:prefiereEpoca rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+               rdfs:range <http://webprotege.stanford.edu/Epoca> ;
+               rdfs:comment "Esta relación indica que epocas prefiere un visitante." ;
+               rdfs:label "prefiereEpoca" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#prefierePintor
+:prefierePintor rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                rdfs:range <http://webprotege.stanford.edu/Pintor> ;
+                rdfs:comment "Esta relación indica que pintores prefiere un visitante." ;
+                rdfs:label "prefierePintor" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#prefiereTematica
+:prefiereTematica rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf owl:topObjectProperty ;
+                  rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                  rdfs:range <http://webprotege.stanford.edu/Tematica> ;
+                  rdfs:comment "Esta relación indica que tematicas prefiere un visitante." ;
+                  rdfs:label "prefiereTematica" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://webprotege.stanford.edu/altura
+<http://webprotege.stanford.edu/altura> rdf:type owl:DatatypeProperty ;
+                                        rdfs:subPropertyOf owl:topDataProperty ;
+                                        rdf:type owl:FunctionalProperty ;
+                                        rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+                                        rdfs:range xsd:double ;
+                                        rdfs:comment "Este atributo indica la altura de una obra." ;
+                                        rdfs:label "altura" .
+
+
+###  http://webprotege.stanford.edu/anchura
+<http://webprotege.stanford.edu/anchura> rdf:type owl:DatatypeProperty ;
+                                         rdfs:subPropertyOf owl:topDataProperty ;
+                                         rdf:type owl:FunctionalProperty ;
+                                         rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+                                         rdfs:range xsd:double ;
+                                         rdfs:comment "Este atributo indica la anchura de una obra." ;
+                                         rdfs:label "anchura" .
+
+
+###  http://webprotege.stanford.edu/complejidad
+<http://webprotege.stanford.edu/complejidad> rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                             rdf:type owl:FunctionalProperty ;
+                                             rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+                                             rdfs:range xsd:integer ;
+                                             rdfs:comment "Este atributo indica la complejidad de pintar una obra." ;
+                                             rdfs:label "complejidad" .
+
+
+###  http://webprotege.stanford.edu/conocimiento
+<http://webprotege.stanford.edu/conocimiento> rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                              rdf:type owl:FunctionalProperty ;
+                                              rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                                              rdfs:range xsd:integer ;
+                                              rdfs:comment "Este atributo indica el conocimiento sobre pintura de un visitante." ;
+                                              rdfs:label "conocimiento" .
+
+
+###  http://webprotege.stanford.edu/duracionVisita
+<http://webprotege.stanford.edu/duracionVisita> rdf:type owl:DatatypeProperty ;
+                                                rdfs:subPropertyOf owl:topDataProperty ;
+                                                rdf:type owl:FunctionalProperty ;
+                                                rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                                                rdfs:range xsd:integer ;
+                                                rdfs:comment "Este atributo indica el las horas diarias que un visitante dedicara a su visita para ver las obras." ;
+                                                rdfs:label "duracionVisita" .
+
+
+###  http://webprotege.stanford.edu/finalEpoca
+<http://webprotege.stanford.edu/finalEpoca> rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <http://webprotege.stanford.edu/Pintor> ;
+                                            rdfs:range xsd:integer ;
+                                            rdfs:comment "Este atributo indica el año de finalizacion de su actividad como pintor." ;
+                                            rdfs:label "finalEpoca" .
+
+
+###  http://webprotege.stanford.edu/inicioEpoca
+<http://webprotege.stanford.edu/inicioEpoca> rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                             rdf:type owl:FunctionalProperty ;
+                                             rdfs:domain <http://webprotege.stanford.edu/Pintor> ;
+                                             rdfs:range xsd:integer ;
+                                             rdfs:comment "Este atributo indica el año de inicio de su actividad como pintor." ;
+                                             rdfs:label "inicioEpoca" .
+
+
+###  http://webprotege.stanford.edu/nacionalidad
+<http://webprotege.stanford.edu/nacionalidad> rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                              rdf:type owl:FunctionalProperty ;
+                                              rdfs:domain <http://webprotege.stanford.edu/Pintor> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Este atributo indica la nacionalidad del pintor." ;
+                                              rdfs:label "nacionalidad" .
+
+
+###  http://webprotege.stanford.edu/nombreCorriente
+<http://webprotege.stanford.edu/nombreCorriente> rdf:type owl:DatatypeProperty ;
+                                                 rdfs:subPropertyOf owl:topDataProperty ;
+                                                 rdf:type owl:FunctionalProperty ;
+                                                 rdfs:domain <http://webprotege.stanford.edu/Corriente> ;
+                                                 rdfs:range xsd:string ;
+                                                 rdfs:comment "Este atributo indica el nombre de una corriente." ;
+                                                 rdfs:label "nombreCorriente" .
+
+
+###  http://webprotege.stanford.edu/nombreEpoca
+<http://webprotege.stanford.edu/nombreEpoca> rdf:type owl:DatatypeProperty ;
+                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                             rdf:type owl:FunctionalProperty ;
+                                             rdfs:domain <http://webprotege.stanford.edu/Epoca> ;
+                                             rdfs:range xsd:string ;
+                                             rdfs:comment "Este atributo indica el nombre de una epoca." ;
+                                             rdfs:label "nombreEpoca" .
+
+
+###  http://webprotege.stanford.edu/nombreObra
+<http://webprotege.stanford.edu/nombreObra> rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:comment "Este atributo indica el nombre de una obra." ;
+                                            rdfs:label "nombreObra" .
+
+
+###  http://webprotege.stanford.edu/nombrePintor
+<http://webprotege.stanford.edu/nombrePintor> rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                              rdf:type owl:FunctionalProperty ;
+                                              rdfs:domain <http://webprotege.stanford.edu/Pintor> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Este atributo indica el nombre de un pintor." ;
+                                              rdfs:label "nombrePintor" .
+
+
+###  http://webprotege.stanford.edu/numDiasVisita
+<http://webprotege.stanford.edu/numDiasVisita> rdf:type owl:DatatypeProperty ;
+                                               rdfs:subPropertyOf owl:topDataProperty ;
+                                               rdf:type owl:FunctionalProperty ;
+                                               rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                                               rdfs:range xsd:integer ;
+                                               rdfs:comment "Este atributo indica el numero de dias que un visitante dedicará a ver las obras." ;
+                                               rdfs:label "numDiasVisita" .
+
+
+###  http://webprotege.stanford.edu/numPersonasGrupo
+<http://webprotege.stanford.edu/numPersonasGrupo> rdf:type owl:DatatypeProperty ;
+                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                  rdf:type owl:FunctionalProperty ;
+                                                  rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                                                  rdfs:range xsd:integer ;
+                                                  rdfs:comment "Este atributo indica el numero de personas de un grupo visitante." ;
+                                                  rdfs:label "numPersonasGrupo" .
+
+
+###  http://webprotege.stanford.edu/palabraClave
+<http://webprotege.stanford.edu/palabraClave> rdf:type owl:DatatypeProperty ;
+                                              rdfs:subPropertyOf owl:topDataProperty ;
+                                              rdf:type owl:FunctionalProperty ;
+                                              rdfs:domain <http://webprotege.stanford.edu/Tematica> ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:comment "Este atributo indica la palabra clave de una tematica." ;
+                                              rdfs:label "palabraClave" .
+
+
+###  http://webprotege.stanford.edu/relevancia
+<http://webprotege.stanford.edu/relevancia> rdf:type owl:DatatypeProperty ;
+                                            rdfs:subPropertyOf owl:topDataProperty ;
+                                            rdf:type owl:FunctionalProperty ;
+                                            rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+                                            rdfs:range xsd:integer ;
+                                            rdfs:comment "Este atributo indica la relevancia de una obra." ;
+                                            rdfs:label "relevancia" .
+
+
+###  http://webprotege.stanford.edu/tipo
+<http://webprotege.stanford.edu/tipo> rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                      rdf:type owl:FunctionalProperty ;
+                                      rdfs:domain <http://webprotege.stanford.edu/Visitante> ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:comment "Este atributo indica el tipo de visitante (individual, grupo o familia)." ;
+                                      rdfs:label "tipo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#anoCreacion
+:anoCreacion rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "Este atributo indica el año de creacion de una obra." ;
+             rdfs:label "anoCreacion" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#interes
+:interes rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "Este atributo indica el interes que tiene el visitante sobre la obra." ;
+         rdfs:label "interes" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#numSala
+:numSala rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain <http://webprotege.stanford.edu/Obra> ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "Este atributo indica el numero de sala donde se encuentra una obra." ;
+         rdfs:label "numSala" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://webprotege.stanford.edu/Corriente
+<http://webprotege.stanford.edu/Corriente> rdf:type owl:Class ;
+                                           rdfs:comment "La clase Corriente hace referencia al estilo/escuela/corriente/periodo pictorico de la obra." ;
+                                           rdfs:label "Corriente" .
+
+
+###  http://webprotege.stanford.edu/Epoca
+<http://webprotege.stanford.edu/Epoca> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
+                                       rdfs:comment "La clase Epoca hace referencia al periodo histórico en el que se encuadra la obra." ;
+                                       rdfs:label "Epoca" .
+
+
+###  http://webprotege.stanford.edu/Obra
+<http://webprotege.stanford.edu/Obra> rdf:type owl:Class ;
+                                      rdfs:comment "La clase Obra incluye todos los atributos propios de una pintura (características de la pieza, pintor, epoca, corriente y temática). También contiene el número de la sala en la que se encuentra y un atributo interes, en el cual guardaremos una puntuación del interes que, con los datos del visitante, creemos que éste tiene por ver dicha obra." ;
+                                      rdfs:label "Obra" .
+
+
+###  http://webprotege.stanford.edu/Pintor
+<http://webprotege.stanford.edu/Pintor> rdf:type owl:Class ;
+                                        rdfs:comment "La clase Pintor hace referencia al autor que ha pintado la obra." ;
+                                        rdfs:label "Pintor" .
+
+
+###  http://webprotege.stanford.edu/Tematica
+<http://webprotege.stanford.edu/Tematica> rdf:type owl:Class ;
+                                          rdfs:subClassOf owl:Thing ;
+                                          rdfs:comment "La clase Tematica hace referencia a las palabras claves con las que se puede clasificar la obra." ;
+                                          rdfs:label "Tematica" .
+
+
+###  http://webprotege.stanford.edu/Visitante
+<http://webprotege.stanford.edu/Visitante> rdf:type owl:Class ;
+                                           rdfs:subClassOf owl:Thing ;
+                                           rdfs:comment "La clase Visitante almacena los datos necesarios (datos personales y preferencias) que permiten generar una serie de obras recomendadas para éste. Se generará una instancia para cada visitante con los datos que el propio usuario introduzca." ;
+                                           rdfs:label "Visitante" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://webprotege.stanford.edu/Campo_de_trigo_con_cipreses
+<http://webprotege.stanford.edu/Campo_de_trigo_con_cipreses> rdf:type owl:NamedIndividual ,
+                                                                      <http://webprotege.stanford.edu/Obra> ;
+                                                             <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                                                             <http://webprotege.stanford.edu/correspondeA> <http://webprotege.stanford.edu/Epoca_contemporanea> ;
+                                                             <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                                                             <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                                                             <http://webprotege.stanford.edu/altura> 93 ;
+                                                             <http://webprotege.stanford.edu/anchura> 72 ;
+                                                             <http://webprotege.stanford.edu/complejidad> 3 ;
+                                                             <http://webprotege.stanford.edu/nombreObra> "Campo de trigo con cipreses"^^xsd:string ;
+                                                             <http://webprotege.stanford.edu/relevancia> 1 ;
+                                                             :anoCreacion 1889 ;
+                                                             :interes 0 ;
+                                                             :numSala 1 ;
+                                                             rdfs:label "Campo de trigo con cipreses"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Edvard_Munch
+<http://webprotege.stanford.edu/Edvard_Munch> rdf:type owl:NamedIndividual ,
+                                                       <http://webprotege.stanford.edu/Pintor> ;
+                                              <http://webprotege.stanford.edu/correspondeA> :Realismo ;
+                                              <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+                                              <http://webprotege.stanford.edu/finalEpoca> 1943 ;
+                                              <http://webprotege.stanford.edu/inicioEpoca> 1884 ;
+                                              <http://webprotege.stanford.edu/nacionalidad> "Noruega"^^xsd:string ;
+                                              <http://webprotege.stanford.edu/nombrePintor> "Edvard Munch"^^xsd:string ;
+                                              rdfs:label "Edvard Munch"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/El_3_de_mayo_en_Madrid
+<http://webprotege.stanford.edu/El_3_de_mayo_en_Madrid> rdf:type owl:NamedIndividual ,
+                                                                 <http://webprotege.stanford.edu/Obra> ;
+                                                        <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Historica> ;
+                                                        <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+                                                        <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+                                                        <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+                                                        <http://webprotege.stanford.edu/altura> 347 ;
+                                                        <http://webprotege.stanford.edu/anchura> 268 ;
+                                                        <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                        <http://webprotege.stanford.edu/nombreObra> "El 3 de mayo en Madrid"^^xsd:string ;
+                                                        <http://webprotege.stanford.edu/relevancia> 1 ;
+                                                        :anoCreacion 1814 ;
+                                                        :interes 0 ;
+                                                        :numSala 2 ;
+                                                        rdfs:label "El 3 de mayo en Madrid"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/El_Bosco
+<http://webprotege.stanford.edu/El_Bosco> rdf:type owl:NamedIndividual ,
+                                                   <http://webprotege.stanford.edu/Pintor> ;
+                                          <http://webprotege.stanford.edu/correspondeA> <http://webprotege.stanford.edu/Renacimiento> ;
+                                          <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                                          <http://webprotege.stanford.edu/finalEpoca> 1516 ;
+                                          <http://webprotege.stanford.edu/inicioEpoca> 1480 ;
+                                          <http://webprotege.stanford.edu/nacionalidad> "Holanda"^^xsd:string ;
+                                          <http://webprotege.stanford.edu/nombrePintor> "El Bosco"^^xsd:string ;
+                                          rdfs:label "El Bosco"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/El_grito
+<http://webprotege.stanford.edu/El_grito> rdf:type owl:NamedIndividual ,
+                                                   <http://webprotege.stanford.edu/Obra> ;
+                                          <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                          <http://webprotege.stanford.edu/correspondeA> :Epoca_Expresionismo ;
+                                          <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+                                          <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+                                          <http://webprotege.stanford.edu/altura> 91 ;
+                                          <http://webprotege.stanford.edu/anchura> 74 ;
+                                          <http://webprotege.stanford.edu/complejidad> 1 ;
+                                          <http://webprotege.stanford.edu/nombreObra> "El grito"^^xsd:string ;
+                                          <http://webprotege.stanford.edu/relevancia> 1 ;
+                                          :anoCreacion 1893 ;
+                                          :interes 0 ;
+                                          :numSala 1 ;
+                                          rdfs:label "El grito"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Epoca_contemporanea
+<http://webprotege.stanford.edu/Epoca_contemporanea> rdf:type owl:NamedIndividual ,
+                                                              <http://webprotege.stanford.edu/Epoca> ;
+                                                     <http://webprotege.stanford.edu/nombreEpoca> "Contemporanea"^^xsd:string ;
+                                                     rdfs:label "Epoca contemporanea" .
+
+
+###  http://webprotege.stanford.edu/Expresionismo
+<http://webprotege.stanford.edu/Expresionismo> rdf:type owl:NamedIndividual ,
+                                                        <http://webprotege.stanford.edu/Corriente> ;
+                                               <http://webprotege.stanford.edu/nombreCorriente> "Expresionismo"^^xsd:string ;
+                                               rdfs:label "Expresionismo"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Francisco_de_Goya
+<http://webprotege.stanford.edu/Francisco_de_Goya> rdf:type owl:NamedIndividual ,
+                                                            <http://webprotege.stanford.edu/Pintor> ;
+                                                   <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+                                                   <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+                                                   <http://webprotege.stanford.edu/finalEpoca> 1828 ;
+                                                   <http://webprotege.stanford.edu/inicioEpoca> 1765 ;
+                                                   <http://webprotege.stanford.edu/nacionalidad> "España"^^xsd:string ;
+                                                   <http://webprotege.stanford.edu/nombrePintor> "Francisco de Goya"^^xsd:string ;
+                                                   rdfs:label "Francisco de Goya"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Historica
+<http://webprotege.stanford.edu/Historica> rdf:type owl:NamedIndividual ,
+                                                    <http://webprotege.stanford.edu/Tematica> ;
+                                           <http://webprotege.stanford.edu/palabraClave> "Historica"^^xsd:string ;
+                                           rdfs:label "Historica"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/La_Gioconda
+<http://webprotege.stanford.edu/La_Gioconda> rdf:type owl:NamedIndividual ,
+                                                      <http://webprotege.stanford.edu/Obra> ;
+                                             <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                             <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                                             <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                                             <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Leonardo_da_Vinci> ;
+                                             <http://webprotege.stanford.edu/altura> 77 ;
+                                             <http://webprotege.stanford.edu/anchura> 53 ;
+                                             <http://webprotege.stanford.edu/complejidad> 2 ;
+                                             <http://webprotege.stanford.edu/nombreObra> "La Gioconda"^^xsd:string ;
+                                             <http://webprotege.stanford.edu/relevancia> 1 ;
+                                             :anoCreacion 1519 ;
+                                             :interes 0 ;
+                                             :numSala 3 ;
+                                             rdfs:label "La Gioconda"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/La_maja_desnuda
+<http://webprotege.stanford.edu/La_maja_desnuda> rdf:type owl:NamedIndividual ,
+                                                          <http://webprotege.stanford.edu/Obra> ;
+                                                 <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                                 <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+                                                 <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+                                                 <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+                                                 <http://webprotege.stanford.edu/altura> 190.6 ;
+                                                 <http://webprotege.stanford.edu/anchura> 97.3 ;
+                                                 <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                 <http://webprotege.stanford.edu/nombreObra> "La maja desnuda"^^xsd:string ;
+                                                 <http://webprotege.stanford.edu/relevancia> 1 ;
+                                                 :anoCreacion 1800 ;
+                                                 :interes 0 ;
+                                                 :numSala 4 ;
+                                                 rdfs:label "La maja desnuda"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/La_maja_vestida
+<http://webprotege.stanford.edu/La_maja_vestida> rdf:type owl:NamedIndividual ,
+                                                          <http://webprotege.stanford.edu/Obra> ;
+                                                 <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                                 <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+                                                 <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+                                                 <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+                                                 <http://webprotege.stanford.edu/altura> 188 ;
+                                                 <http://webprotege.stanford.edu/anchura> 94.7 ;
+                                                 <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                 <http://webprotege.stanford.edu/nombreObra> "La maja vestida"^^xsd:string ;
+                                                 <http://webprotege.stanford.edu/relevancia> 1 ;
+                                                 :anoCreacion 1807 ;
+                                                 :interes 0 ;
+                                                 :numSala 5 ;
+                                                 rdfs:label "La maja vestida"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/La_ultima_cena
+<http://webprotege.stanford.edu/La_ultima_cena> rdf:type owl:NamedIndividual ,
+                                                         <http://webprotege.stanford.edu/Obra> ;
+                                                <http://webprotege.stanford.edu/clasificadaEn> :Religion ;
+                                                <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                                                <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                                                <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Leonardo_da_Vinci> ;
+                                                <http://webprotege.stanford.edu/altura> 460 ;
+                                                <http://webprotege.stanford.edu/anchura> 880 ;
+                                                <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                <http://webprotege.stanford.edu/nombreObra> "La ultima cena"^^xsd:string ;
+                                                <http://webprotege.stanford.edu/relevancia> 1 ;
+                                                :anoCreacion 1498 ;
+                                                :interes 0 ;
+                                                :numSala 1 ;
+                                                rdfs:label "La ultima cena"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Leonardo_da_Vinci
+<http://webprotege.stanford.edu/Leonardo_da_Vinci> rdf:type owl:NamedIndividual ,
+                                                            <http://webprotege.stanford.edu/Pintor> ;
+                                                   <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                                                   <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                                                   <http://webprotege.stanford.edu/finalEpoca> 1519 ;
+                                                   <http://webprotege.stanford.edu/inicioEpoca> 1474 ;
+                                                   <http://webprotege.stanford.edu/nacionalidad> "Italia"^^xsd:string ;
+                                                   <http://webprotege.stanford.edu/nombrePintor> "Leonardo da Vinci"^^xsd:string ;
+                                                   rdfs:label "Leonardo da Vinci"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Los_Girasoles
+<http://webprotege.stanford.edu/Los_Girasoles> rdf:type owl:NamedIndividual ,
+                                                        <http://webprotege.stanford.edu/Obra> ;
+                                               <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Naturaleza_muerta> ;
+                                               <http://webprotege.stanford.edu/correspondeA> <http://webprotege.stanford.edu/Epoca_contemporanea> ;
+                                               <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                                               <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                                               <http://webprotege.stanford.edu/altura> 91 ;
+                                               <http://webprotege.stanford.edu/anchura> 73 ;
+                                               <http://webprotege.stanford.edu/complejidad> 3 ;
+                                               <http://webprotege.stanford.edu/nombreObra> "Los girasoles"^^xsd:string ;
+                                               <http://webprotege.stanford.edu/relevancia> 1 ;
+                                               :anoCreacion 1888 ;
+                                               :interes 0 ;
+                                               :numSala 3 ;
+                                               rdfs:label "Los Girasoles" .
+
+
+###  http://webprotege.stanford.edu/Mitologia
+<http://webprotege.stanford.edu/Mitologia> rdf:type owl:NamedIndividual ,
+                                                    <http://webprotege.stanford.edu/Tematica> ;
+                                           <http://webprotege.stanford.edu/palabraClave> "Mitologia"^^xsd:string ;
+                                           rdfs:label "Mitologia"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Naturaleza_muerta
+<http://webprotege.stanford.edu/Naturaleza_muerta> rdf:type owl:NamedIndividual ,
+                                                            <http://webprotege.stanford.edu/Tematica> ;
+                                                   <http://webprotege.stanford.edu/palabraClave> "Naturaleza muerta"^^xsd:string ;
+                                                   rdfs:label "Naturaleza muerta"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Neoimpresionismo
+<http://webprotege.stanford.edu/Neoimpresionismo> rdf:type owl:NamedIndividual ,
+                                                           <http://webprotege.stanford.edu/Corriente> ;
+                                                  <http://webprotege.stanford.edu/nombreCorriente> "Neoimpresionismo"^^xsd:string ;
+                                                  rdfs:label "Neoimpresionismo"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Paisaje
+<http://webprotege.stanford.edu/Paisaje> rdf:type owl:NamedIndividual ,
+                                                  <http://webprotege.stanford.edu/Tematica> ;
+                                         <http://webprotege.stanford.edu/palabraClave> "Paisaje"^^xsd:string ;
+                                         rdfs:label "Paisaje"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Postimpresionismo
+<http://webprotege.stanford.edu/Postimpresionismo> rdf:type owl:NamedIndividual ,
+                                                            <http://webprotege.stanford.edu/Corriente> ;
+                                                   <http://webprotege.stanford.edu/nombreCorriente> "Postimpresionismo"^^xsd:string ;
+                                                   rdfs:label "Postimpresionismo"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Puntillismo
+<http://webprotege.stanford.edu/Puntillismo> rdf:type owl:NamedIndividual ,
+                                                      <http://webprotege.stanford.edu/Corriente> ;
+                                             <http://webprotege.stanford.edu/nombreCorriente> "Puntillismo"^^xsd:string ;
+                                             rdfs:label "Puntillismo"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Renacimiento
+<http://webprotege.stanford.edu/Renacimiento> rdf:type owl:NamedIndividual ,
+                                                       <http://webprotege.stanford.edu/Corriente> ;
+                                              <http://webprotege.stanford.edu/nombreCorriente> "Renacimiento"^^xsd:string ;
+                                              rdfs:label "Renacimiento"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Retrato
+<http://webprotege.stanford.edu/Retrato> rdf:type owl:NamedIndividual ,
+                                                  <http://webprotege.stanford.edu/Tematica> ;
+                                         <http://webprotege.stanford.edu/palabraClave> "Retrato"^^xsd:string ;
+                                         rdfs:label "Retrato"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Romanticismo
+<http://webprotege.stanford.edu/Romanticismo> rdf:type owl:NamedIndividual ,
+                                                       <http://webprotege.stanford.edu/Corriente> ;
+                                              <http://webprotege.stanford.edu/nombreCorriente> "Romanticismo"^^xsd:string ;
+                                              rdfs:label "Romanticismo"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Saturno_devorando_a_un_hijo
+<http://webprotege.stanford.edu/Saturno_devorando_a_un_hijo> rdf:type owl:NamedIndividual ,
+                                                                      <http://webprotege.stanford.edu/Obra> ;
+                                                             <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Mitologia> ;
+                                                             <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+                                                             <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+                                                             <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+                                                             <http://webprotege.stanford.edu/altura> 87 ;
+                                                             <http://webprotege.stanford.edu/anchura> 182.5 ;
+                                                             <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                             <http://webprotege.stanford.edu/nombreObra> "Saturno devorando a un hijo"^^xsd:string ;
+                                                             <http://webprotege.stanford.edu/relevancia> 1 ;
+                                                             :anoCreacion 1638 ;
+                                                             :interes 0 ;
+                                                             :numSala 4 ;
+                                                             rdfs:label "Saturno devorando a un hijo"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Triptico_del_Jardin_de_las_delicias
+<http://webprotege.stanford.edu/Triptico_del_Jardin_de_las_delicias> rdf:type owl:NamedIndividual ,
+                                                                              <http://webprotege.stanford.edu/Obra> ;
+                                                                     <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ,
+                                                                                                                    :Religion ;
+                                                                     <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                                                                     <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                                                                     <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/El_Bosco> ;
+                                                                     <http://webprotege.stanford.edu/altura> 205.5 ;
+                                                                     <http://webprotege.stanford.edu/anchura> 384.9 ;
+                                                                     <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                                     <http://webprotege.stanford.edu/nombreObra> "Triptico del Jardin de las delicias"^^xsd:string ;
+                                                                     <http://webprotege.stanford.edu/relevancia> 1 ;
+                                                                     :anoCreacion 1500 ;
+                                                                     :interes 0 ;
+                                                                     :numSala 5 ;
+                                                                     rdfs:label "Triptico del Jardin de las delicias"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/Vincent_van_Gogh
+<http://webprotege.stanford.edu/Vincent_van_Gogh> rdf:type owl:NamedIndividual ,
+                                                           <http://webprotege.stanford.edu/Pintor> ;
+                                                  <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                                                  <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Neoimpresionismo> ,
+                                                                                              <http://webprotege.stanford.edu/Postimpresionismo> ,
+                                                                                              <http://webprotege.stanford.edu/Puntillismo> ;
+                                                  <http://webprotege.stanford.edu/finalEpoca> 1890 ;
+                                                  <http://webprotege.stanford.edu/inicioEpoca> 1885 ;
+                                                  <http://webprotege.stanford.edu/nacionalidad> "Holanda"^^xsd:string ;
+                                                  <http://webprotege.stanford.edu/nombrePintor> "Vincent van Gogh"^^xsd:string ;
+                                                  rdfs:label "Vincent van Gogh"^^xsd:string .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Abstracta
+:Abstracta rdf:type owl:NamedIndividual ,
+                    <http://webprotege.stanford.edu/Tematica> ;
+           <http://webprotege.stanford.edu/palabraClave> "Abstracta" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Adoracion_del_nino
+:Adoracion_del_nino rdf:type owl:NamedIndividual ,
+                             <http://webprotege.stanford.edu/Obra> ;
+                    <http://webprotege.stanford.edu/clasificadaEn> :Religion ;
+                    <http://webprotege.stanford.edu/correspondeA> :Epoca_Medieval ,
+                                                                  :Epoca_Renacimiento ;
+                    <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                    <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/El_Bosco> ;
+                    <http://webprotege.stanford.edu/altura> 66 ;
+                    <http://webprotege.stanford.edu/anchura> 43 ;
+                    <http://webprotege.stanford.edu/complejidad> 1 ;
+                    <http://webprotege.stanford.edu/nombreObra> "Adoración del niño" ;
+                    <http://webprotege.stanford.edu/relevancia> 3 ;
+                    :anoCreacion 1568 ;
+                    :interes 0 ;
+                    :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Alegorica
+:Alegorica rdf:type owl:NamedIndividual ,
+                    <http://webprotege.stanford.edu/Tematica> ;
+           <http://webprotege.stanford.edu/palabraClave> "Alegorica" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Amanecer_en_la_Riera_de_Sant_Joan
+:Amanecer_en_la_Riera_de_Sant_Joan rdf:type owl:NamedIndividual ,
+                                            <http://webprotege.stanford.edu/Obra> ;
+                                   <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                                   <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                                   <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                                   <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+                                   <http://webprotege.stanford.edu/altura> 54 ;
+                                   <http://webprotege.stanford.edu/anchura> "45,5" ;
+                                   <http://webprotege.stanford.edu/complejidad> 3 ;
+                                   <http://webprotege.stanford.edu/nombreObra> "Amanecer en la Riera de Sant Joan" ;
+                                   <http://webprotege.stanford.edu/relevancia> 3 ;
+                                   :anoCreacion 1903 ;
+                                   :interes 0 ;
+                                   :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Anibal_vencedor_contempla_Italia_desde_los_Alpes
+:Anibal_vencedor_contempla_Italia_desde_los_Alpes rdf:type owl:NamedIndividual ,
+                                                           <http://webprotege.stanford.edu/Obra> ;
+                                                  <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Historica> ;
+                                                  <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+                                                  <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+                                                  <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+                                                  <http://webprotege.stanford.edu/altura> 87 ;
+                                                  <http://webprotege.stanford.edu/anchura> "131,5" ;
+                                                  <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                  <http://webprotege.stanford.edu/nombreObra> "Anibal vencedor contempla Italia desde los Alpes" ;
+                                                  <http://webprotege.stanford.edu/relevancia> 3 ;
+                                                  :anoCreacion 1771 ;
+                                                  :interes 0 ;
+                                                  :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Animales
+:Animales rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Tematica> ;
+          <http://webprotege.stanford.edu/palabraClave> "Animales" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Autorretrato
+:Autorretrato rdf:type owl:NamedIndividual ,
+                       <http://webprotege.stanford.edu/Obra> ;
+              <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+              <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+              <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+              <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+              <http://webprotege.stanford.edu/altura> "45,8" ;
+              <http://webprotege.stanford.edu/anchura> "35,6" ;
+              <http://webprotege.stanford.edu/complejidad> 1 ;
+              <http://webprotege.stanford.edu/nombreObra> "Autorretrato" ;
+              <http://webprotege.stanford.edu/relevancia> 2 ;
+              :anoCreacion 1775 ;
+              :interes 0 ;
+              :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Autorretrato_con_oreja_vendada
+:Autorretrato_con_oreja_vendada rdf:type owl:NamedIndividual ,
+                                         <http://webprotege.stanford.edu/Obra> ;
+                                <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                <http://webprotege.stanford.edu/correspondeA> :Epoca_Impresionismo ;
+                                <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                                <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                                <http://webprotege.stanford.edu/altura> 60 ;
+                                <http://webprotege.stanford.edu/anchura> 50 ;
+                                <http://webprotege.stanford.edu/complejidad> 2 ;
+                                <http://webprotege.stanford.edu/nombreObra> "Autorretrato con oreja vendada" ;
+                                <http://webprotege.stanford.edu/relevancia> 2 ;
+                                :anoCreacion 1889 ;
+                                :interes 0 ;
+                                :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Autorretrato_con_un_sombrero_de_paja
+:Autorretrato_con_un_sombrero_de_paja rdf:type owl:NamedIndividual ,
+                                               <http://webprotege.stanford.edu/Obra> ;
+                                      <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                      <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                                      <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                                      <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                                      <http://webprotege.stanford.edu/altura> "40,6" ;
+                                      <http://webprotege.stanford.edu/anchura> "31,8" ;
+                                      <http://webprotege.stanford.edu/complejidad> 1 ;
+                                      <http://webprotege.stanford.edu/nombreObra> "Autorretrato con un sombrero de paja" ;
+                                      <http://webprotege.stanford.edu/relevancia> 1 ;
+                                      :anoCreacion 1887 ;
+                                      :interes 0 ;
+                                      :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Bailarin
+:Bailarin rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Obra> ;
+          <http://webprotege.stanford.edu/clasificadaEn> :Simbolica ;
+          <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+          <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+          <http://webprotege.stanford.edu/pintadaPor> :Joan_Miro ;
+          <http://webprotege.stanford.edu/altura> "115,5" ;
+          <http://webprotege.stanford.edu/anchura> "88,5" ;
+          <http://webprotege.stanford.edu/complejidad> 3 ;
+          <http://webprotege.stanford.edu/nombreObra> "Bailarin" ;
+          <http://webprotege.stanford.edu/relevancia> 1 ;
+          :anoCreacion 1925 ;
+          :interes 0 ;
+          :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Baile_de_la_vida
+:Baile_de_la_vida rdf:type owl:NamedIndividual ,
+                           <http://webprotege.stanford.edu/Obra> ;
+                  <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                  <http://webprotege.stanford.edu/correspondeA> :Epoca_Expresionismo ;
+                  <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+                  <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+                  <http://webprotege.stanford.edu/altura> 126 ;
+                  <http://webprotege.stanford.edu/anchura> "190,5" ;
+                  <http://webprotege.stanford.edu/complejidad> 2 ;
+                  <http://webprotege.stanford.edu/nombreObra> "Baile de la vida" ;
+                  <http://webprotege.stanford.edu/relevancia> 3 ;
+                  :anoCreacion 1900 ;
+                  :interes 0 ;
+                  :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Cafe_Terrace_de_Noche
+:Cafe_Terrace_de_Noche rdf:type owl:NamedIndividual ,
+                                <http://webprotege.stanford.edu/Obra> ;
+                       <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                       <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                       <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                       <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                       <http://webprotege.stanford.edu/altura> 81 ;
+                       <http://webprotege.stanford.edu/anchura> "65,5" ;
+                       <http://webprotege.stanford.edu/complejidad> 2 ;
+                       <http://webprotege.stanford.edu/nombreObra> "Cafe Terrace de Noche" ;
+                       <http://webprotege.stanford.edu/relevancia> 2 ;
+                       :anoCreacion 1888 ;
+                       :interes 0 ;
+                       :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Corrida_de_toros
+:Corrida_de_toros rdf:type owl:NamedIndividual ,
+                           <http://webprotege.stanford.edu/Obra> ;
+                  <http://webprotege.stanford.edu/clasificadaEn> :Animales ;
+                  <http://webprotege.stanford.edu/correspondeA> :Epoca_Cubismo ,
+                                                                :Epoca_Surrealismo ;
+                  <http://webprotege.stanford.edu/perteneceA> :Cubismo ,
+                                                              :Surrealismo ;
+                  <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+                  <http://webprotege.stanford.edu/altura> "85,5" ;
+                  <http://webprotege.stanford.edu/anchura> "92,5" ;
+                  <http://webprotege.stanford.edu/complejidad> 2 ;
+                  <http://webprotege.stanford.edu/nombreObra> "Corrida de toros" ;
+                  <http://webprotege.stanford.edu/relevancia> 3 ;
+                  :anoCreacion 1934 ;
+                  :interes 0 ;
+                  :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Cubismo
+:Cubismo rdf:type owl:NamedIndividual ,
+                  <http://webprotege.stanford.edu/Corriente> ;
+         <http://webprotege.stanford.edu/nombreCorriente> "Cubismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Desnudo
+:Desnudo rdf:type owl:NamedIndividual ,
+                  <http://webprotege.stanford.edu/Tematica> ;
+         <http://webprotege.stanford.edu/palabraClave> "Desnudo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_Beso
+:El_Beso rdf:type owl:NamedIndividual ,
+                  <http://webprotege.stanford.edu/Obra> ;
+         <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+         <http://webprotege.stanford.edu/correspondeA> :Epoca_Expresionismo ;
+         <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+         <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+         <http://webprotege.stanford.edu/altura> 81 ;
+         <http://webprotege.stanford.edu/anchura> 99 ;
+         <http://webprotege.stanford.edu/complejidad> 3 ;
+         <http://webprotege.stanford.edu/nombreObra> "El beso" ;
+         <http://webprotege.stanford.edu/relevancia> 2 ;
+         :anoCreacion 1897 ;
+         :interes 0 ;
+         :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_Patio_de_Port_Lligat
+:El_Patio_de_Port_Lligat rdf:type owl:NamedIndividual ,
+                                  <http://webprotege.stanford.edu/Obra> ;
+                         <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                         <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                         <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                         <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+                         <http://webprotege.stanford.edu/altura> 77 ;
+                         <http://webprotege.stanford.edu/anchura> "61,5" ;
+                         <http://webprotege.stanford.edu/complejidad> 3 ;
+                         <http://webprotege.stanford.edu/nombreObra> "El Patio de Port Lligat" ;
+                         <http://webprotege.stanford.edu/relevancia> 3 ;
+                         :anoCreacion 1968 ;
+                         :interes 0 ;
+                         :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_campo_labrado
+:El_campo_labrado rdf:type owl:NamedIndividual ,
+                           <http://webprotege.stanford.edu/Obra> ;
+                  <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                  <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                  <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                  <http://webprotege.stanford.edu/pintadaPor> :Joan_Miro ;
+                  <http://webprotege.stanford.edu/altura> 66 ;
+                  <http://webprotege.stanford.edu/anchura> "92,7" ;
+                  <http://webprotege.stanford.edu/complejidad> 1 ;
+                  <http://webprotege.stanford.edu/nombreObra> "El campo labrado" ;
+                  <http://webprotege.stanford.edu/relevancia> 1 ;
+                  :anoCreacion 1923 ;
+                  :interes 0 ;
+                  :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_dormitori_de_Van_Gogh_a_Arle
+:El_dormitori_de_Van_Gogh_a_Arle rdf:type owl:NamedIndividual ,
+                                          <http://webprotege.stanford.edu/Obra> ;
+                                 <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                 <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                                 <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                                 <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                                 <http://webprotege.stanford.edu/altura> 72 ;
+                                 <http://webprotege.stanford.edu/anchura> 90 ;
+                                 <http://webprotege.stanford.edu/complejidad> 3 ;
+                                 <http://webprotege.stanford.edu/nombreObra> "El dormitori de Van Gogh a Arle" ;
+                                 <http://webprotege.stanford.edu/relevancia> 2 ;
+                                 :anoCreacion 1888 ;
+                                 :interes 0 ;
+                                 :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_gran_masturbador
+:El_gran_masturbador rdf:type owl:NamedIndividual ,
+                              <http://webprotege.stanford.edu/Obra> ;
+                     <http://webprotege.stanford.edu/clasificadaEn> :Simbolica ;
+                     <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                     <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                     <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+                     <http://webprotege.stanford.edu/altura> 110 ;
+                     <http://webprotege.stanford.edu/anchura> 150 ;
+                     <http://webprotege.stanford.edu/complejidad> 1 ;
+                     <http://webprotege.stanford.edu/nombreObra> "El gran masturbador"^^xsd:string ;
+                     <http://webprotege.stanford.edu/relevancia> 1 ;
+                     :anoCreacion 1929 ;
+                     :interes 0 ;
+                     :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_somriure_de_les_ales_flamejants
+:El_somriure_de_les_ales_flamejants rdf:type owl:NamedIndividual ,
+                                             <http://webprotege.stanford.edu/Obra> ;
+                                    <http://webprotege.stanford.edu/clasificadaEn> :Abstracta ;
+                                    <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                                    <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                                    <http://webprotege.stanford.edu/pintadaPor> :Joan_Miro ;
+                                    <http://webprotege.stanford.edu/altura> 35 ;
+                                    <http://webprotege.stanford.edu/anchura> 46 ;
+                                    <http://webprotege.stanford.edu/complejidad> 2 ;
+                                    <http://webprotege.stanford.edu/nombreObra> "El somriure de les ales flamejants" ;
+                                    <http://webprotege.stanford.edu/relevancia> 1 ;
+                                    :anoCreacion 1953 ;
+                                    :interes 0 ;
+                                    :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_sueno_de_la_razon_produce_monstruos
+:El_sueno_de_la_razon_produce_monstruos rdf:type owl:NamedIndividual ,
+                                                 <http://webprotege.stanford.edu/Obra> ;
+                                        <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                        <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+                                        <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+                                        <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+                                        <http://webprotege.stanford.edu/altura> "21,8" ;
+                                        <http://webprotege.stanford.edu/anchura> "15,2" ;
+                                        <http://webprotege.stanford.edu/complejidad> 3 ;
+                                        <http://webprotege.stanford.edu/nombreObra> "El sueño de la razón produce monstruos" ;
+                                        <http://webprotege.stanford.edu/relevancia> 3 ;
+                                        :anoCreacion 1799 ;
+                                        :interes 0 ;
+                                        :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_viejo_guitarrista_ciego
+:El_viejo_guitarrista_ciego rdf:type owl:NamedIndividual ,
+                                     <http://webprotege.stanford.edu/Obra> ;
+                            <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                            <http://webprotege.stanford.edu/correspondeA> :Epoca_Expresionismo ;
+                            <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+                            <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+                            <http://webprotege.stanford.edu/altura> "82,5" ;
+                            <http://webprotege.stanford.edu/anchura> "121,5" ;
+                            <http://webprotege.stanford.edu/complejidad> 3 ;
+                            <http://webprotege.stanford.edu/nombreObra> "El viejo guitarrista ciego" ;
+                            <http://webprotege.stanford.edu/relevancia> 2 ;
+                            :anoCreacion 1903 ;
+                            :interes 0 ;
+                            :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Cubismo
+:Epoca_Cubismo rdf:type owl:NamedIndividual ,
+                        <http://webprotege.stanford.edu/Epoca> ;
+               <http://webprotege.stanford.edu/nombreEpoca> "Cubismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Expresionismo
+:Epoca_Expresionismo rdf:type owl:NamedIndividual ,
+                              <http://webprotege.stanford.edu/Epoca> ;
+                     <http://webprotege.stanford.edu/nombreEpoca> "Expresionismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Impresionismo
+:Epoca_Impresionismo rdf:type owl:NamedIndividual ,
+                              <http://webprotege.stanford.edu/Epoca> ;
+                     <http://webprotege.stanford.edu/nombreEpoca> "Impresionismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Medieval
+:Epoca_Medieval rdf:type owl:NamedIndividual ,
+                         <http://webprotege.stanford.edu/Epoca> ;
+                <http://webprotege.stanford.edu/nombreEpoca> "Medieval" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Postimpresionismo
+:Epoca_Postimpresionismo rdf:type owl:NamedIndividual ,
+                                  <http://webprotege.stanford.edu/Epoca> ;
+                         <http://webprotege.stanford.edu/nombreEpoca> "Postimpresionismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Realismo
+:Epoca_Realismo rdf:type owl:NamedIndividual ,
+                         <http://webprotege.stanford.edu/Epoca> ;
+                <http://webprotege.stanford.edu/nombreEpoca> "Realismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Renacimiento
+:Epoca_Renacimiento rdf:type owl:NamedIndividual ,
+                             <http://webprotege.stanford.edu/Epoca> ;
+                    <http://webprotege.stanford.edu/nombreEpoca> "Renacimiento" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Romanticismo
+:Epoca_Romanticismo rdf:type owl:NamedIndividual ,
+                             <http://webprotege.stanford.edu/Epoca> ;
+                    <http://webprotege.stanford.edu/nombreEpoca> "Romanticismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Epoca_Surrealismo
+:Epoca_Surrealismo rdf:type owl:NamedIndividual ,
+                            <http://webprotege.stanford.edu/Epoca> ;
+                   <http://webprotege.stanford.edu/nombreEpoca> "Surrealismo"^^xsd:string .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Fernando_VII
+:Fernando_VII rdf:type owl:NamedIndividual ,
+                       <http://webprotege.stanford.edu/Obra> ;
+              <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+              <http://webprotege.stanford.edu/correspondeA> :Epoca_Romanticismo ;
+              <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Romanticismo> ;
+              <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Francisco_de_Goya> ;
+              <http://webprotege.stanford.edu/altura> "225,5" ;
+              <http://webprotege.stanford.edu/anchura> "124,5" ;
+              <http://webprotege.stanford.edu/complejidad> 1 ;
+              <http://webprotege.stanford.edu/nombreObra> "Fernando VII" ;
+              <http://webprotege.stanford.edu/relevancia> 2 ;
+              :anoCreacion 1814 ;
+              :interes 0 ;
+              :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Fiesta_en_Figueres
+:Fiesta_en_Figueres rdf:type owl:NamedIndividual ,
+                             <http://webprotege.stanford.edu/Obra> ;
+                    <http://webprotege.stanford.edu/clasificadaEn> :Simbolica ;
+                    <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                    <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                    <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+                    <http://webprotege.stanford.edu/altura> "27,5" ;
+                    <http://webprotege.stanford.edu/anchura> "19,5" ;
+                    <http://webprotege.stanford.edu/complejidad> 3 ;
+                    <http://webprotege.stanford.edu/nombreObra> "Fiesta en Figueres" ;
+                    <http://webprotege.stanford.edu/relevancia> 3 ;
+                    :anoCreacion 1916 ;
+                    :interes 0 ;
+                    :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Figura_en_la_ventana
+:Figura_en_la_ventana rdf:type owl:NamedIndividual ,
+                               <http://webprotege.stanford.edu/Obra> ;
+                      <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                      <http://webprotege.stanford.edu/correspondeA> :Epoca_Realismo ;
+                      <http://webprotege.stanford.edu/perteneceA> :Realismo ;
+                      <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+                      <http://webprotege.stanford.edu/altura> 102 ;
+                      <http://webprotege.stanford.edu/anchura> 75 ;
+                      <http://webprotege.stanford.edu/complejidad> 2 ;
+                      <http://webprotege.stanford.edu/nombreObra> "Figura en la ventana" ;
+                      <http://webprotege.stanford.edu/relevancia> 1 ;
+                      :anoCreacion 1925 ;
+                      :interes 0 ;
+                      :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Gato_cogiendo_un_pajaro
+:Gato_cogiendo_un_pajaro rdf:type owl:NamedIndividual ,
+                                  <http://webprotege.stanford.edu/Obra> ;
+                         <http://webprotege.stanford.edu/clasificadaEn> :Animales ;
+                         <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                         <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                         <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+                         <http://webprotege.stanford.edu/altura> 100 ;
+                         <http://webprotege.stanford.edu/anchura> 81 ;
+                         <http://webprotege.stanford.edu/complejidad> 3 ;
+                         <http://webprotege.stanford.edu/nombreObra> "Gato cogiendo un pajaro" ;
+                         <http://webprotege.stanford.edu/relevancia> 2 ;
+                         :anoCreacion 1939 ;
+                         :interes 0 ;
+                         :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Guernica
+:Guernica rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Obra> ;
+          <http://webprotege.stanford.edu/clasificadaEn> :Alegorica ,
+                                                         :Simbolica ;
+          <http://webprotege.stanford.edu/correspondeA> :Epoca_Cubismo ,
+                                                        :Epoca_Surrealismo ;
+          <http://webprotege.stanford.edu/perteneceA> :Cubismo ,
+                                                      :Surrealismo ;
+          <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+          <http://webprotege.stanford.edu/altura> 349 ;
+          <http://webprotege.stanford.edu/anchura> 776 ;
+          <http://webprotege.stanford.edu/complejidad> 1 ;
+          <http://webprotege.stanford.edu/nombreObra> "Guernica" ;
+          <http://webprotege.stanford.edu/relevancia> 1 ;
+          :anoCreacion 1937 ;
+          :interes 0 ;
+          :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Hombre_de_Vitruvio
+:Hombre_de_Vitruvio rdf:type owl:NamedIndividual ,
+                             <http://webprotege.stanford.edu/Obra> ;
+                    <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                    <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                    <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                    <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Leonardo_da_Vinci> ;
+                    <http://webprotege.stanford.edu/altura> "34,3" ;
+                    <http://webprotege.stanford.edu/anchura> "24,5" ;
+                    <http://webprotege.stanford.edu/complejidad> 2 ;
+                    <http://webprotege.stanford.edu/nombreObra> "Hombre de Vitruvio" ;
+                    <http://webprotege.stanford.edu/relevancia> 1 ;
+                    :anoCreacion 1492 ;
+                    :interes 0 ;
+                    :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Hombre_y_mujer
+:Hombre_y_mujer rdf:type owl:NamedIndividual ,
+                         <http://webprotege.stanford.edu/Obra> ;
+                <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                <http://webprotege.stanford.edu/correspondeA> :Epoca_Expresionismo ;
+                <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+                <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+                <http://webprotege.stanford.edu/altura> "60,2" ;
+                <http://webprotege.stanford.edu/anchura> 100 ;
+                <http://webprotege.stanford.edu/complejidad> 2 ;
+                <http://webprotege.stanford.edu/nombreObra> "Hombre y mujer" ;
+                <http://webprotege.stanford.edu/relevancia> 1 ;
+                :anoCreacion 1898 ;
+                :interes 0 ;
+                :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Impresionismo
+:Impresionismo rdf:type owl:NamedIndividual ,
+                        <http://webprotege.stanford.edu/Corriente> ;
+               <http://webprotege.stanford.edu/nombreCorriente> "Impresionismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Infierno
+:Infierno rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Obra> ;
+          <http://webprotege.stanford.edu/clasificadaEn> :Religion ;
+          <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+          <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+          <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/El_Bosco> ;
+          <http://webprotege.stanford.edu/altura> "86,5" ;
+          <http://webprotege.stanford.edu/anchura> "39,5" ;
+          <http://webprotege.stanford.edu/complejidad> 2 ;
+          <http://webprotege.stanford.edu/nombreObra> "Infierno" ;
+          <http://webprotege.stanford.edu/relevancia> 3 ;
+          :anoCreacion 1504 ;
+          :interes 0 ;
+          :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Irises
+:Irises rdf:type owl:NamedIndividual ,
+                 <http://webprotege.stanford.edu/Obra> ;
+        <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+        <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+        <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+        <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+        <http://webprotege.stanford.edu/altura> 71 ;
+        <http://webprotege.stanford.edu/anchura> 93 ;
+        <http://webprotege.stanford.edu/complejidad> 2 ;
+        <http://webprotege.stanford.edu/nombreObra> "Irises" ;
+        <http://webprotege.stanford.edu/relevancia> 2 ;
+        :anoCreacion 1889 ;
+        :interes 0 ;
+        :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Japonismo
+:Japonismo rdf:type owl:NamedIndividual ,
+                    <http://webprotege.stanford.edu/Corriente> ;
+           <http://webprotege.stanford.edu/nombreCorriente> "Japonismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Joan_Miro
+:Joan_Miro rdf:type owl:NamedIndividual ,
+                    <http://webprotege.stanford.edu/Pintor> ;
+           <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+           <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+           <http://webprotege.stanford.edu/finalEpoca> 1983 ;
+           <http://webprotege.stanford.edu/inicioEpoca> 1912 ;
+           <http://webprotege.stanford.edu/nacionalidad> "España" ;
+           <http://webprotege.stanford.edu/nombrePintor> "Joan Miro" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#La_Creacion
+:La_Creacion rdf:type owl:NamedIndividual ,
+                      <http://webprotege.stanford.edu/Obra> ;
+             <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ,
+                                                            :Religion ;
+             <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+             <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+             <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/El_Bosco> ;
+             <http://webprotege.stanford.edu/altura> 77 ;
+             <http://webprotege.stanford.edu/anchura> 188 ;
+             <http://webprotege.stanford.edu/complejidad> 1 ;
+             <http://webprotege.stanford.edu/nombreObra> "La Creacion" ;
+             <http://webprotege.stanford.edu/relevancia> 2 ;
+             :anoCreacion 1515 ;
+             :interes 0 ;
+             :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#La_Masia
+:La_Masia rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Obra> ;
+          <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+          <http://webprotege.stanford.edu/correspondeA> :Epoca_Cubismo ;
+          <http://webprotege.stanford.edu/perteneceA> :Cubismo ,
+                                                      :Primitivismo ;
+          <http://webprotege.stanford.edu/pintadaPor> :Joan_Miro ;
+          <http://webprotege.stanford.edu/altura> 132 ;
+          <http://webprotege.stanford.edu/anchura> 147 ;
+          <http://webprotege.stanford.edu/complejidad> 1 ;
+          <http://webprotege.stanford.edu/nombreObra> "La Masia" ;
+          <http://webprotege.stanford.edu/relevancia> 2 ;
+          :anoCreacion 1922 ;
+          :interes 0 ;
+          :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#La_extraccion_de_la_piedra_de_la_locura
+:La_extraccion_de_la_piedra_de_la_locura rdf:type owl:NamedIndividual ,
+                                                  <http://webprotege.stanford.edu/Obra> ;
+                                         <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ,
+                                                                                        :Religion ;
+                                         <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                                         <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ,
+                                                                                     :Medieval ;
+                                         <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/El_Bosco> ;
+                                         <http://webprotege.stanford.edu/altura> 34 ;
+                                         <http://webprotege.stanford.edu/anchura> 48 ;
+                                         <http://webprotege.stanford.edu/complejidad> 3 ;
+                                         <http://webprotege.stanford.edu/nombreObra> "La extraccion de la piedra de la locura" ;
+                                         <http://webprotege.stanford.edu/relevancia> 3 ;
+                                         :anoCreacion 1505 ;
+                                         :interes 0 ;
+                                         :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#La_noche_estrellada
+:La_noche_estrellada rdf:type owl:NamedIndividual ,
+                              <http://webprotege.stanford.edu/Obra> ;
+                     <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                     <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                     <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                     <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                     <http://webprotege.stanford.edu/altura> 73 ;
+                     <http://webprotege.stanford.edu/anchura> 92 ;
+                     <http://webprotege.stanford.edu/complejidad> 2 ;
+                     <http://webprotege.stanford.edu/nombreObra> "La noche estrellada" ;
+                     <http://webprotege.stanford.edu/relevancia> 1 ;
+                     :anoCreacion 1889 ;
+                     :interes 0 ;
+                     :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#La_persistencia_de_la_memoria
+:La_persistencia_de_la_memoria rdf:type owl:NamedIndividual ,
+                                        <http://webprotege.stanford.edu/Obra> ;
+                               <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ,
+                                                                              :Simbolica ;
+                               <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                               <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                               <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+                               <http://webprotege.stanford.edu/altura> "24,1"^^xsd:double ;
+                               <http://webprotege.stanford.edu/anchura> "33.0"^^xsd:double ;
+                               <http://webprotege.stanford.edu/complejidad> 3 ;
+                               <http://webprotege.stanford.edu/nombreObra> "La persistencia de la memoria"^^xsd:string ;
+                               <http://webprotege.stanford.edu/relevancia> 1 ;
+                               :anoCreacion 1931 ;
+                               :interes 0 ;
+                               :numSala 1 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#La_torre_de_los_enigmas
+:La_torre_de_los_enigmas rdf:type owl:NamedIndividual ,
+                                  <http://webprotege.stanford.edu/Obra> ;
+                         <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                         <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                         <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                         <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+                         <http://webprotege.stanford.edu/altura> 35 ;
+                         <http://webprotege.stanford.edu/anchura> 27 ;
+                         <http://webprotege.stanford.edu/complejidad> 2 ;
+                         <http://webprotege.stanford.edu/nombreObra> "La torre de los enigmas" ;
+                         <http://webprotege.stanford.edu/relevancia> 3 ;
+                         :anoCreacion 1981 ;
+                         :interes 0 ;
+                         :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#La_virgen_de_las_rocas
+:La_virgen_de_las_rocas rdf:type owl:NamedIndividual ,
+                                 <http://webprotege.stanford.edu/Obra> ;
+                        <http://webprotege.stanford.edu/clasificadaEn> :Religion ;
+                        <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                        <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                        <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Leonardo_da_Vinci> ;
+                        <http://webprotege.stanford.edu/altura> "189,5" ;
+                        <http://webprotege.stanford.edu/anchura> 120 ;
+                        <http://webprotege.stanford.edu/complejidad> 2 ;
+                        <http://webprotege.stanford.edu/nombreObra> "La virgen de las rocas" ;
+                        <http://webprotege.stanford.edu/relevancia> 2 ;
+                        :anoCreacion 1505 ;
+                        :interes 0 ;
+                        :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Las_senoritas_de_Avignon
+:Las_senoritas_de_Avignon rdf:type owl:NamedIndividual ,
+                                   <http://webprotege.stanford.edu/Obra> ;
+                          <http://webprotege.stanford.edu/clasificadaEn> :Desnudo ;
+                          <http://webprotege.stanford.edu/correspondeA> :Epoca_Cubismo ;
+                          <http://webprotege.stanford.edu/perteneceA> :Cubismo ;
+                          <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+                          <http://webprotege.stanford.edu/altura> "243,7" ;
+                          <http://webprotege.stanford.edu/anchura> "233,7" ;
+                          <http://webprotege.stanford.edu/complejidad> 2 ;
+                          <http://webprotege.stanford.edu/nombreObra> "Las señoritas de Avignon" ;
+                          <http://webprotege.stanford.edu/relevancia> 1 ;
+                          :anoCreacion 1907 ;
+                          :interes 0 ;
+                          :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Leda
+:Leda rdf:type owl:NamedIndividual ,
+               <http://webprotege.stanford.edu/Obra> ;
+      <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Mitologia> ;
+      <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+      <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+      <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Leonardo_da_Vinci> ;
+      <http://webprotege.stanford.edu/altura> 130 ;
+      <http://webprotege.stanford.edu/anchura> "77,5" ;
+      <http://webprotege.stanford.edu/complejidad> 1 ;
+      <http://webprotege.stanford.edu/nombreObra> "Leda" ;
+      <http://webprotege.stanford.edu/relevancia> 3 ;
+      :anoCreacion 1510 ;
+      :interes 0 ;
+      :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Manana
+:Manana rdf:type owl:NamedIndividual ,
+                 <http://webprotege.stanford.edu/Obra> ;
+        <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+        <http://webprotege.stanford.edu/correspondeA> :Epoca_Realismo ;
+        <http://webprotege.stanford.edu/perteneceA> :Realismo ;
+        <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+        <http://webprotege.stanford.edu/altura> "103,5" ;
+        <http://webprotege.stanford.edu/anchura> "96,5" ;
+        <http://webprotege.stanford.edu/complejidad> 2 ;
+        <http://webprotege.stanford.edu/nombreObra> "Mañana" ;
+        <http://webprotege.stanford.edu/relevancia> 3 ;
+        :anoCreacion 1884 ;
+        :interes 0 ;
+        :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Maternidad
+:Maternidad rdf:type owl:NamedIndividual ,
+                     <http://webprotege.stanford.edu/Obra> ;
+            <http://webprotege.stanford.edu/clasificadaEn> :Simbolica ;
+            <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+            <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+            <http://webprotege.stanford.edu/pintadaPor> :Joan_Miro ;
+            <http://webprotege.stanford.edu/altura> 92 ;
+            <http://webprotege.stanford.edu/anchura> 73 ;
+            <http://webprotege.stanford.edu/complejidad> 3 ;
+            <http://webprotege.stanford.edu/nombreObra> "Maternidad" ;
+            <http://webprotege.stanford.edu/relevancia> 1 ;
+            :anoCreacion 1924 ;
+            :interes 0 ;
+            :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Medieval
+:Medieval rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Corriente> ;
+          <http://webprotege.stanford.edu/nombreCorriente> "Medieval" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Muerte_en_la_habitacion_del_enfermo
+:Muerte_en_la_habitacion_del_enfermo rdf:type owl:NamedIndividual ,
+                                              <http://webprotege.stanford.edu/Obra> ;
+                                     <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                                     <http://webprotege.stanford.edu/correspondeA> :Epoca_Expresionismo ;
+                                     <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+                                     <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+                                     <http://webprotege.stanford.edu/altura> 160 ;
+                                     <http://webprotege.stanford.edu/anchura> "134,5" ;
+                                     <http://webprotege.stanford.edu/complejidad> 2 ;
+                                     <http://webprotege.stanford.edu/nombreObra> "Muerte en la habitacion del enfermo" ;
+                                     <http://webprotege.stanford.edu/relevancia> 2 ;
+                                     :anoCreacion 1893 ;
+                                     :interes 0 ;
+                                     :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Pablo_Picasso
+:Pablo_Picasso rdf:type owl:NamedIndividual ,
+                        <http://webprotege.stanford.edu/Pintor> ;
+               <http://webprotege.stanford.edu/correspondeA> :Epoca_Cubismo ,
+                                                             :Epoca_Postimpresionismo ,
+                                                             :Epoca_Surrealismo ;
+               <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ,
+                                                           :Cubismo ,
+                                                           :Surrealismo ;
+               <http://webprotege.stanford.edu/finalEpoca> 1973 ;
+               <http://webprotege.stanford.edu/inicioEpoca> 1895 ;
+               <http://webprotege.stanford.edu/nacionalidad> "España" ;
+               <http://webprotege.stanford.edu/nombrePintor> "Pablo Picasso" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Paraiso
+:Paraiso rdf:type owl:NamedIndividual ,
+                  <http://webprotege.stanford.edu/Obra> ;
+         <http://webprotege.stanford.edu/clasificadaEn> :Religion ;
+         <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+         <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+         <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/El_Bosco> ;
+         <http://webprotege.stanford.edu/altura> "74,5" ;
+         <http://webprotege.stanford.edu/anchura> 30 ;
+         <http://webprotege.stanford.edu/complejidad> 2 ;
+         <http://webprotege.stanford.edu/nombreObra> "Paraiso" ;
+         <http://webprotege.stanford.edu/relevancia> 3 ;
+         :anoCreacion 1575 ;
+         :interes 0 ;
+         :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Primitivismo
+:Primitivismo rdf:type owl:NamedIndividual ,
+                       <http://webprotege.stanford.edu/Corriente> ;
+              <http://webprotege.stanford.edu/nombreCorriente> "Primitivismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Ramas_con_Flor_de_Almendro
+:Ramas_con_Flor_de_Almendro rdf:type owl:NamedIndividual ,
+                                     <http://webprotege.stanford.edu/Obra> ;
+                            <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Naturaleza_muerta> ;
+                            <http://webprotege.stanford.edu/correspondeA> :Epoca_Realismo ;
+                            <http://webprotege.stanford.edu/perteneceA> :Japonismo ;
+                            <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Vincent_van_Gogh> ;
+                            <http://webprotege.stanford.edu/altura> 92 ;
+                            <http://webprotege.stanford.edu/anchura> "73,5" ;
+                            <http://webprotege.stanford.edu/complejidad> 2 ;
+                            <http://webprotege.stanford.edu/nombreObra> "Ramas con Flor de Almendro" ;
+                            <http://webprotege.stanford.edu/relevancia> 1 ;
+                            :anoCreacion 1890 ;
+                            :interes 0 ;
+                            :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Realismo
+:Realismo rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Corriente> ;
+          <http://webprotege.stanford.edu/nombreCorriente> "Realismo" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Religion
+:Religion rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Tematica> ;
+          <http://webprotege.stanford.edu/palabraClave> "Religion" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Salvador_Dali
+:Salvador_Dali rdf:type owl:NamedIndividual ,
+                        <http://webprotege.stanford.edu/Pintor> ;
+               <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+               <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+               <http://webprotege.stanford.edu/finalEpoca> 1988 ;
+               <http://webprotege.stanford.edu/inicioEpoca> 1917 ;
+               <http://webprotege.stanford.edu/nacionalidad> "España"^^xsd:string ;
+               <http://webprotege.stanford.edu/nombrePintor> "Salvador Dali"^^xsd:string .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Simbolica
+:Simbolica rdf:type owl:NamedIndividual ,
+                    <http://webprotege.stanford.edu/Tematica> ;
+           <http://webprotege.stanford.edu/palabraClave> "Simbolica" .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Subida_del_Bendito
+:Subida_del_Bendito rdf:type owl:NamedIndividual ,
+                             <http://webprotege.stanford.edu/Obra> ;
+                    <http://webprotege.stanford.edu/clasificadaEn> :Religion ;
+                    <http://webprotege.stanford.edu/correspondeA> :Epoca_Renacimiento ;
+                    <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Renacimiento> ;
+                    <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/El_Bosco> ;
+                    <http://webprotege.stanford.edu/altura> "86,5" ;
+                    <http://webprotege.stanford.edu/anchura> "39,5" ;
+                    <http://webprotege.stanford.edu/complejidad> 1 ;
+                    <http://webprotege.stanford.edu/nombreObra> "Subida del Bendito" ;
+                    <http://webprotege.stanford.edu/relevancia> 2 ;
+                    :anoCreacion 1504 ;
+                    :interes 0 ;
+                    :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Sueño_causado_por_el_vuelo_de_una_abeja_alrededor_de_una_granada_un_segundo_antes_de_despertar
+:Sueño_causado_por_el_vuelo_de_una_abeja_alrededor_de_una_granada_un_segundo_antes_de_despertar rdf:type owl:NamedIndividual ,
+                                                                                                         <http://webprotege.stanford.edu/Obra> ;
+                                                                                                <http://webprotege.stanford.edu/clasificadaEn> :Simbolica ;
+                                                                                                <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                                                                                                <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                                                                                                <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+                                                                                                <http://webprotege.stanford.edu/altura> 51 ;
+                                                                                                <http://webprotege.stanford.edu/anchura> 41 ;
+                                                                                                <http://webprotege.stanford.edu/complejidad> 1 ;
+                                                                                                <http://webprotege.stanford.edu/nombreObra> "Sueño causado por el vuelo de una abeja alrededor de una granada un segundo antes de despertar" ;
+                                                                                                <http://webprotege.stanford.edu/relevancia> 2 ;
+                                                                                                :anoCreacion 1944 ;
+                                                                                                :interes 0 ;
+                                                                                                :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Surrealismo
+:Surrealismo rdf:type owl:NamedIndividual ,
+                      <http://webprotege.stanford.edu/Corriente> ;
+             <http://webprotege.stanford.edu/nombreCorriente> "Surrealismo"^^xsd:string .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Tarde_en_la_calle_Karl_Johan
+:Tarde_en_la_calle_Karl_Johan rdf:type owl:NamedIndividual ,
+                                       <http://webprotege.stanford.edu/Obra> ;
+                              <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                              <http://webprotege.stanford.edu/correspondeA> :Epoca_Expresionismo ;
+                              <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Expresionismo> ;
+                              <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+                              <http://webprotege.stanford.edu/altura> "84,5" ;
+                              <http://webprotege.stanford.edu/anchura> 121 ;
+                              <http://webprotege.stanford.edu/complejidad> 2 ;
+                              <http://webprotege.stanford.edu/nombreObra> "Tarde en la calle Karl Johan" ;
+                              <http://webprotege.stanford.edu/relevancia> 2 ;
+                              :anoCreacion 1892 ;
+                              :interes 0 ;
+                              :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Tieta
+:Tieta rdf:type owl:NamedIndividual ,
+                <http://webprotege.stanford.edu/Obra> ;
+       <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+       <http://webprotege.stanford.edu/correspondeA> :Epoca_Impresionismo ;
+       <http://webprotege.stanford.edu/perteneceA> :Impresionismo ;
+       <http://webprotege.stanford.edu/pintadaPor> :Salvador_Dali ;
+       <http://webprotege.stanford.edu/altura> "52,7" ;
+       <http://webprotege.stanford.edu/anchura> "41,3" ;
+       <http://webprotege.stanford.edu/complejidad> 2 ;
+       <http://webprotege.stanford.edu/nombreObra> "Tieta" ;
+       <http://webprotege.stanford.edu/relevancia> 3 ;
+       :anoCreacion 1920 ;
+       :interes 0 ;
+       :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Un_artista
+:Un_artista rdf:type owl:NamedIndividual ,
+                     <http://webprotege.stanford.edu/Obra> ;
+            <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+            <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+            <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+            <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+            <http://webprotege.stanford.edu/altura> 100 ;
+            <http://webprotege.stanford.edu/anchura> 73 ;
+            <http://webprotege.stanford.edu/complejidad> 2 ;
+            <http://webprotege.stanford.edu/nombreObra> "Un artista" ;
+            <http://webprotege.stanford.edu/relevancia> 2 ;
+            :anoCreacion 1963 ;
+            :interes 0 ;
+            :numSala 5 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Un_gallo
+:Un_gallo rdf:type owl:NamedIndividual ,
+                   <http://webprotege.stanford.edu/Obra> ;
+          <http://webprotege.stanford.edu/clasificadaEn> :Animales ;
+          <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+          <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+          <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+          <http://webprotege.stanford.edu/altura> "77,5" ;
+          <http://webprotege.stanford.edu/anchura> 54 ;
+          <http://webprotege.stanford.edu/complejidad> 3 ;
+          <http://webprotege.stanford.edu/nombreObra> "Un gallo" ;
+          <http://webprotege.stanford.edu/relevancia> 3 ;
+          :anoCreacion 1988 ;
+          :interes 0 ;
+          :numSala 4 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Una_habitacion_azul
+:Una_habitacion_azul rdf:type owl:NamedIndividual ,
+                              <http://webprotege.stanford.edu/Obra> ;
+                     <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Retrato> ;
+                     <http://webprotege.stanford.edu/correspondeA> :Epoca_Postimpresionismo ;
+                     <http://webprotege.stanford.edu/perteneceA> <http://webprotege.stanford.edu/Postimpresionismo> ;
+                     <http://webprotege.stanford.edu/pintadaPor> :Pablo_Picasso ;
+                     <http://webprotege.stanford.edu/altura> "50,8" ;
+                     <http://webprotege.stanford.edu/anchura> 62 ;
+                     <http://webprotege.stanford.edu/complejidad> 2 ;
+                     <http://webprotege.stanford.edu/nombreObra> "Una habitacion azul" ;
+                     <http://webprotege.stanford.edu/relevancia> 3 ;
+                     :anoCreacion 1901 ;
+                     :interes 0 ;
+                     :numSala 2 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#Vista_sobre_el_Rover_en_St._Cloud
+:Vista_sobre_el_Rover_en_St._Cloud rdf:type owl:NamedIndividual ,
+                                            <http://webprotege.stanford.edu/Obra> ;
+                                   <http://webprotege.stanford.edu/clasificadaEn> <http://webprotege.stanford.edu/Paisaje> ;
+                                   <http://webprotege.stanford.edu/correspondeA> :Epoca_Impresionismo ;
+                                   <http://webprotege.stanford.edu/perteneceA> :Impresionismo ;
+                                   <http://webprotege.stanford.edu/pintadaPor> <http://webprotege.stanford.edu/Edvard_Munch> ;
+                                   <http://webprotege.stanford.edu/altura> "46,5" ;
+                                   <http://webprotege.stanford.edu/anchura> 38 ;
+                                   <http://webprotege.stanford.edu/complejidad> 2 ;
+                                   <http://webprotege.stanford.edu/nombreObra> "Vista sobre el Rover en St. Cloud" ;
+                                   <http://webprotege.stanford.edu/relevancia> 3 ;
+                                   :anoCreacion 1890 ;
+                                   :interes 0 ;
+                                   :numSala 3 .
+
+
+###  urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_bell_ocell_que_desxifra_el_desconegut_a_una_parella_d'enamorats
+<urn:webprotege:ontology:62d9c931-902c-4aa8-a726-2ec8a1ed2baa#El_bell_ocell_que_desxifra_el_desconegut_a_una_parella_d'enamorats> rdf:type owl:NamedIndividual ,
+                                                                                                                                           <http://webprotege.stanford.edu/Obra> ;
+                                                                                                                                  <http://webprotege.stanford.edu/clasificadaEn> :Abstracta ;
+                                                                                                                                  <http://webprotege.stanford.edu/correspondeA> :Epoca_Surrealismo ;
+                                                                                                                                  <http://webprotege.stanford.edu/perteneceA> :Surrealismo ;
+                                                                                                                                  <http://webprotege.stanford.edu/pintadaPor> :Joan_Miro ;
+                                                                                                                                  <http://webprotege.stanford.edu/altura> "52,5" ;
+                                                                                                                                  <http://webprotege.stanford.edu/anchura> 47 ;
+                                                                                                                                  <http://webprotege.stanford.edu/complejidad> 2 ;
+                                                                                                                                  <http://webprotege.stanford.edu/nombreObra> "El bell ocell que desxifra el desconegut a una parella d'enamorats" ;
+                                                                                                                                  <http://webprotege.stanford.edu/relevancia> 2 ;
+                                                                                                                                  :anoCreacion 1941 ;
+                                                                                                                                  :interes 0 ;
+                                                                                                                                  :numSala 1 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
